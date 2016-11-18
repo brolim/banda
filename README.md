@@ -8,7 +8,7 @@ Site para bandas. Copie, leve, altere, forke.
 
 # Disclaimer
 
-*Código escrito em português!* 
+**Código escrito em português!**
 
 É fácil encontrar artigos colocando a modelagem como uma das partes mais importantes da programação de sistemas.
 

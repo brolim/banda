@@ -28,7 +28,6 @@
             background: #FB8383;
             padding: 7px 15px;
             color: #FFE7F0;
-            display: none;
         }
 
         .flash_msg .titulo, .flash_msg .msg {
@@ -100,17 +99,21 @@
                                 </span>
                             </header>
 
-                            <div class="flash_msg">
-                                <div class="titulo">
-                                    título teste
+                            <% if flash[:notice] %>
+
+                                <div class="flash_msg">
+                                    <div class="titulo">
+                                        Aviso:
+                                    </div>
+                                    <div class="msg">
+                                        <%= flash[:notice] %>
+                                    </div>
+                                    <div class="pull-right">
+                                        <i class="fa fa-times"></i>
+                                    </div>
                                 </div>
-                                <div class="msg">
-                                    msg teste msg teste msg teste msg teste msg teste
-                                </div>
-                                <div class="pull-right">
-                                    <i class="fa fa-times"></i>
-                                </div>
-                            </div>
+
+                            <% end %>
 
                             <div class="panel-body" style="<%= 'padding-top: 0px; padding-bottom: 0px;' if params['action']=='home' %>">
 
@@ -132,21 +135,6 @@
     </section>
     <!--main content end-->
 
-
-    <script type="text/javascript">
-        $(function(){
-
-            <% if flash[:notice] and flash[:notice].size>0 %>
-            
-                <% flash[:notice].each do |notice| %>
-    
-                    Flash.notice("<%= notice['titulo'] %>", "<%= notice['msg'] %>");
-
-                <% end %>
-            <% end %>
-
-        });
-    </script>
 
 </body>
 </html>

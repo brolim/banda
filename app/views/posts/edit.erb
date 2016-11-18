@@ -1,0 +1,20 @@
+<%= render :partial=>'menu_posts' %>
+
+<%= form_tag post_path(@post.id), :method=>'put' do %>
+
+	<div>
+		título
+	</div>
+	<%= text_field_tag 'titulo', @post.titulo, :class=>'form-control', :placeholder=>'digite o título aqui' %>
+
+
+	<div style="margin-top:10px;">
+		texto
+	</div>
+	
+	<%= text_area_tag 'texto', params['texto'], :class=>'form-control', :style=>'height:200px;' %>
+
+	<%= submit_tag 'atualizar post', :class=>'btn btn-sm btn-info pull-right', :style=>'margin-top:5px;' %>
+
+<% end %>
+

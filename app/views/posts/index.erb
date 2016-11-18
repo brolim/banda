@@ -1,0 +1,41 @@
+<%= render :partial=>'menu_posts' %>
+
+
+<% if @posts.count > 0 %>
+
+	<table class="table">
+		
+		<tr>
+
+			<th>
+				título
+			</th>	
+
+			<th></th>
+		</tr>
+
+
+		<% @posts.each do |post| %>
+
+			<tr>
+				
+				<td>
+					<%= link_to post.titulo, post_path(post.id) %>
+				</td>
+
+				<td>
+					<%= link_to 'editar', edit_post_path(post.id), :class=>'btn btn-xs btn-info' %>
+					<%= button_to 'X', post_path(post.id), :class=>'btn btn-xs btn-danger', :method=>'delete' %>
+				</td>
+
+			</tr>
+
+		<% end %>
+
+	</table>
+
+<% else %>
+
+	sem registro de posts
+
+<% end %>

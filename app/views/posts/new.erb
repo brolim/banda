@@ -1,0 +1,20 @@
+<%= render :partial=>'menu_posts' %>
+
+<%= form_tag posts_path do %>
+
+	<div>
+		título
+	</div>
+	<%= text_field_tag 'titulo', params['titulo'], :class=>'form-control', :placeholder=>'digite o título aqui' %>
+
+
+	<div style="margin-top:10px;">
+		texto
+	</div>
+	
+	<%= text_area_tag 'texto', params['texto'], :class=>'form-control', :style=>'height:200px;' %>
+
+	<%= submit_tag 'criar novo post', :class=>'btn btn-sm btn-info pull-right', :style=>'margin-top:5px;' %>
+
+<% end %>
+
